@@ -3,9 +3,6 @@ declare(strict_types=1);
 
 namespace Kristos80\EnvReader;
 
-/**
- *
- */
 final readonly class EnvReader implements EnvReaderInterface {
 
 	/**
