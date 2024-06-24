@@ -15,7 +15,7 @@
             <directory suffix=".php">src/</directory>
         </include>
     </source>
-    <coverage processUncoveredFiles="true">
+    <coverage>
         <report>
             <clover outputFile="coverage.xml"/>
         </report>
