@@ -15,4 +15,7 @@
             <directory suffix=".php">src/</directory>
         </include>
     </source>
+    <logging>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
+    </logging>
 </phpunit>
