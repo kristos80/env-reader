@@ -17,9 +17,5 @@
     </source>
     <logging>
         <log type="coverage-clover" target="coverage.xml"/>
-        <log type="coverage-text" target="php://stdout"/>
-        <log type="coverage-html" target="coverage"/>
-        <log type="coverage-php" target="coverage.php"/>
-        <log type="coverage-lcov" target="coverage/lcov.info"/>
     </logging>
 </phpunit>

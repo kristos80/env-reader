@@ -21,10 +21,11 @@ jobs:
         run: composer install
 
       - name: Run Tests
-        run: vendor/bin/phpunit --coverage-clover=coverage.xml --coverage-lcov=coverage/lcov.info
+        run: vendor/bin/phpunit --coverage-clover=coverage.xml
 
-      - name: Coveralls
-        uses: coverallsapp/github-action@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: coverage.xml
+      - name: Upload Coverage to Coveralls
+        run: |
+            composer require php-coveralls/php-coveralls
+            vendor/bin/php-coveralls -v
+        env:
+            COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
