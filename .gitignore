@@ -2,6 +2,5 @@
 !.gitkeep
 .env
 .dev.env
-.test.env
 .idea
 herd.php-xdebug.ini
