@@ -6,6 +6,7 @@
   "require-dev": {
     "marcocesarato/php-conventional-changelog": "^1",
     "pestphp/pest": "^2",
+    "php-coveralls/php-coveralls": "^0.1.0",
     "phpmd/phpmd": "^2",
     "vlucas/phpdotenv": "^5"
   },
