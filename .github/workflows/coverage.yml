@@ -1,0 +1,30 @@
+name: Test Coverage
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php: ['8.2']
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+
+      - name: Install Dependencies
+        run: composer install
+
+      - name: Run Tests
+        run: vendor/bin/phpunit --coverage-clover=coverage.xml
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: coverage.xml
