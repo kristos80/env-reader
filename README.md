@@ -4,6 +4,10 @@ The env-reader PHP package provides a robust solution for reading environment va
 
 ---
 
+[![Coverage Status](https://coveralls.io/repos/github/kristos80/env-reader/badge.svg?branch=master)](https://coveralls.io/github/kristos80/env-reader?branch=master)
+
+---
+
 ## Work in Progress (WIP) — Do not use in production yet: ##
 
 - It has not undergone extensive testing.
