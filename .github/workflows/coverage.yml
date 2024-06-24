@@ -21,7 +21,7 @@ jobs:
         run: composer install
 
       - name: Run Tests
-        run: vendor/bin/phpunit --configuration phpunit.xml
+        run: vendor/bin/phpunit --configuration phpunit.xml.dist
 
       - name: Install php-coveralls
         run: composer require php-coveralls/php-coveralls
