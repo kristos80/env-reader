@@ -1,6 +1,6 @@
-# 🔍 | env-reader
+# 🔍 env-reader
 
-The env-reader PHP package provides a robust solution for reading environment variables from the `$_ENV` superglobal. At its core is the `EnvReader` class, which implements the `EnvReaderInterface` to deliver essential methods for fetching and comparing environment variable values.
+The `env-reader` package provides a robust solution for reading environment variables from the `$_ENV` superglobal. At its core is the `EnvReader` class, which implements the `EnvReaderInterface` to deliver essential methods for fetching and comparing environment variable values.
 
 ---
 
@@ -22,4 +22,4 @@ Key functionalities include:
 
 `get()` Method: This method retrieves the value of a specified environment variable, with support for multiple possible names. It allows for default values if the environment variable is not found, and includes an optional strict mode for case-sensitive key matching.
 
-The package's design ensures flexibility and ease of use, making it a valuable tool for managing environment variables in PHP applications.
+The package's design ensures flexibility and ease of use, making it a valuable tool for managing environment variables in `PHP` applications.
