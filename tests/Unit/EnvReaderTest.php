@@ -195,6 +195,37 @@ final class EnvReaderTest extends TestBase {
 	/**
 	 * @return void
 	 */
+	public function testCasting(): void {
+		$string = $this->envReader->get("TEST_VARIABLE", NULL, FALSE, "string");
+		$this->assertIsString($string);
+
+		$bool = $this->envReader->get("TEST_BOOL_VARIABLE", NULL, FALSE, "bool");
+		$this->assertIsBool($bool);
+
+		$int = $this->envReader->get("TEST_INT_VARIABLE", NULL, FALSE, "int");
+		$this->assertIsInt($int);
+
+		$float = $this->envReader->get("TEST_FLOAT_VARIABLE", NULL, FALSE, "float");
+		$this->assertIsFloat($float);
+
+		$null = $this->envReader->get("TEST_NULL_VARIABLE", NULL, FALSE, "null");
+		$this->assertNull($null);
+
+		$array = $this->envReader->get("TEST_ARRAY_VARIABLE", NULL, FALSE, "array");
+		$this->assertEquals([
+			1,
+			2,
+			3,
+		], $array);
+
+		$object = $this->envReader->get("TEST_OBJECT_VARIABLE", NULL, FALSE, "object");
+
+		$this->assertEquals((object) ["foo" => "dummy"], $object);
+	}
+
+	/**
+	 * @return void
+	 */
 	protected function setUp(): void {
 		parent::setUp();
 		$this->envReader = new EnvReader();

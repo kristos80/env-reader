@@ -10,9 +10,13 @@ final readonly class EnvReader implements EnvReaderInterface {
 	 * @param string|array $possibleEnvNames
 	 * @param array $possibleEnvValues
 	 * @param bool $strict
+	 * @param string|null $cast
 	 * @return bool
 	 */
-	public function equals(string|array $possibleEnvNames, mixed $possibleEnvValues, bool $strict = FALSE): bool {
+	public function equals(string|array $possibleEnvNames,
+		mixed $possibleEnvValues,
+		bool $strict = FALSE,
+		?string $cast = NULL): bool {
 		$envValue = $this->get($possibleEnvNames, NULL, $strict);
 
 		if(is_scalar($possibleEnvValues) === TRUE) {
@@ -28,9 +32,13 @@ final readonly class EnvReader implements EnvReaderInterface {
 	 * @param string[] $possibleEnvNames
 	 * @param mixed|null $default
 	 * @param bool $strict
+	 * @param string|null $cast
 	 * @return mixed
 	 */
-	public function get(string|array $possibleEnvNames, mixed $default = NULL, bool $strict = FALSE): mixed {
+	public function get(string|array $possibleEnvNames,
+		mixed $default = NULL,
+		bool $strict = FALSE,
+		?string $cast = NULL): mixed {
 		if(is_scalar($possibleEnvNames) === TRUE) {
 			$possibleEnvNames = [$possibleEnvNames];
 		}
@@ -44,9 +52,23 @@ final readonly class EnvReader implements EnvReaderInterface {
 		foreach($possibleEnvNames as $possibleEnvName) {
 			foreach($_ENV as $envName => $envValue) {
 				if($manipulationFn($possibleEnvName) === $manipulationFn($envName)) {
-					return $envValue;
+					$default = $envValue;
 				}
 			}
+		}
+
+		if($cast === "array") {
+			$default = json_decode($default, TRUE);
+			$cast = NULL;
+		}
+
+		if($cast === "object") {
+			$default = (object) json_decode($default, TRUE);
+			$cast = NULL;
+		}
+
+		if($cast) {
+			settype($default, $cast);
 		}
 
 		return $default;
