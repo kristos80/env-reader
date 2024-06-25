@@ -3,15 +3,17 @@
   "source": {
     "directories": [
       "src"
-    ],
+    ]
   },
   "mutators": {
     "@default": true
   },
   "logs": {
     "text": "infection.log",
+    "html": "infection.html",
     "stryker": {
-      "report": "master"
-    }
+      "badge": "master"
+    },
+    github: true
   }
 }
