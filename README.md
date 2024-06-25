@@ -4,7 +4,8 @@ The `env-reader` package provides a robust solution for reading environment vari
 
 ---
 
-[![Coverage Status](https://coveralls.io/repos/github/kristos80/env-reader/badge.svg?branch=master)](https://coveralls.io/github/kristos80/env-reader?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/kristos80/env-reader/badge.svg?branch=master)](https://coveralls.io/github/kristos80/env-reader?branch=master) 
+[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fkristos80%2Fenv-reader%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/kristos80/env-reader/master)
 
 ---
 
