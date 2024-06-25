@@ -15,7 +15,7 @@ final readonly class EnvReader implements EnvReaderInterface {
 	public function equals(string|array $possibleEnvNames, mixed $possibleEnvValues, bool $strict = FALSE): bool {
 		$envValue = $this->get($possibleEnvNames, NULL, $strict);
 
-		if(is_scalar($possibleEnvValues)) {
+		if(is_scalar($possibleEnvValues) === TRUE) {
 			$possibleEnvValues = [$possibleEnvValues];
 		}
 
@@ -31,7 +31,7 @@ final readonly class EnvReader implements EnvReaderInterface {
 	 * @return mixed
 	 */
 	public function get(string|array $possibleEnvNames, mixed $default = NULL, bool $strict = FALSE): mixed {
-		if(is_scalar($possibleEnvNames)) {
+		if(is_scalar($possibleEnvNames) === TRUE) {
 			$possibleEnvNames = [$possibleEnvNames];
 		}
 
