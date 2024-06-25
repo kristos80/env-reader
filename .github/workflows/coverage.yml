@@ -29,21 +29,3 @@ jobs:
         run: |
           composer global require php-coveralls/php-coveralls
           php-coveralls --coverage_clover=build/logs/clover.xml -v
-
-      - name: Download infection.phar
-        run: wget https://github.com/infection/infection/releases/download/0.29.0/infection.phar
-
-      - name: Download infection.phar.asc
-        run: wget https://github.com/infection/infection/releases/download/0.29.0/infection.phar.asc
-
-      - name: Import GPG key
-        run: gpg --recv-keys C6D76C329EBADE2FB9C458CFC5095986493B4AA0
-
-      - name: Verify infection.phar
-        run: gpg --with-fingerprint --verify infection.phar.asc infection.phar
-
-      - name: Make infection.phar executable
-        run: chmod +x infection.phar
-
-      - name: Run Infection
-        run: ./infection.phar --min-msi=48 --threads=4

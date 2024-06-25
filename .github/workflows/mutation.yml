@@ -20,10 +20,6 @@ jobs:
       - name: Install Dependencies
         run: composer install
 
-      - name: Echo variable
-        run: |
-          echo ${STRYKER_DASHBOARD_API_KEY}
-
       - name: Download infection.phar
         run: wget https://github.com/infection/infection/releases/download/0.29.0/infection.phar
 
@@ -40,4 +36,6 @@ jobs:
         run: chmod +x infection.phar
 
       - name: Run Infection
+        env:
+          INFECTION_DASHBOARD_API_KEY: ${{ secrets.INFECTION_DASHBOARD_API_KEY }}
         run: ./infection.phar --threads=10
