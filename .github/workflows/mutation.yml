@@ -20,6 +20,10 @@ jobs:
       - name: Install Dependencies
         run: composer install
 
+      - name: Echo variable
+        run: |
+          echo ${STRYKER_DASHBOARD_API_KEY}
+
       - name: Download infection.phar
         run: wget https://github.com/infection/infection/releases/download/0.29.0/infection.phar
 
