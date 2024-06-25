@@ -38,4 +38,6 @@ jobs:
       - name: Run Infection
         env:
           INFECTION_DASHBOARD_API_KEY: ${{ secrets.INFECTION_DASHBOARD_API_KEY }}
-        run: ./infection.phar --threads=10
+        run: |
+          echo ${{ secrets.INFECTION_DASHBOARD_API_KEY }}
+          ./infection.phar --threads=10
