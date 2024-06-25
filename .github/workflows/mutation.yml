@@ -1,4 +1,4 @@
-name: Test Coverage
+name: Test Mutation
 
 on: [push, pull_request]
 
@@ -16,6 +16,9 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
+
+      - name: Install Dependencies
+        run: composer install
 
       - name: Download infection.phar
         run: wget https://github.com/infection/infection/releases/download/0.29.0/infection.phar
