@@ -6,6 +6,7 @@ The `env-reader` package provides a robust solution for reading environment vari
 
 [![Coverage Status](https://coveralls.io/repos/github/kristos80/env-reader/badge.svg?branch=master)](https://coveralls.io/github/kristos80/env-reader?branch=master) 
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fkristos80%2Fenv-reader%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/kristos80/env-reader/master)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/b1424ad661964816aee9fe8ef9e280c0)](https://app.codacy.com/gh/kristos80/env-reader/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 ---
 
