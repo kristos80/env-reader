@@ -20,7 +20,7 @@
             "Kristos80\\EnvReader\\Tests\\": "tests"
         }
     },
-    "version": "0.0.1",
+    "version": "0.0.2",
     "config": {
         "allow-plugins": {
             "pestphp/pest-plugin": true
